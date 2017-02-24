@@ -14,9 +14,9 @@ build: false
 test_script:
   - ps: .\build.ps1
 
- deploy_script:
+deploy_script:
   - ps: Update-ModuleManifest -Path "$PSScriptRoot\ChocoPackageUpdater\ChocoPackageUpdater.psd1" -ModuleVersion $env:APPVEYOR_BUILD_VERSION
-  
+
 notifications:
 - provider: Email
   to:
