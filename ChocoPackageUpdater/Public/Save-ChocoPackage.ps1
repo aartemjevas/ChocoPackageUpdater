@@ -1,7 +1,9 @@
 Function Save-ChocoPackage {
     [CmdletBinding()]
-    param([parameter(ValueFromPipeline=$True)]
+    param([parameter(Mandatory=$true,
+                     ValueFromPipeline=$True)]
           [string[]]$Path,
+          [parameter(Mandatory=$true)]
           [string]$Destination,
           [switch]$Force)
 

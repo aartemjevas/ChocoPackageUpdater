@@ -1,12 +1,24 @@
 Function Get-ChocoPackage {
     [CmdletBinding()]
-    param([string]$Path)
+    param([parameter(Mandatory=$true,
+                     ValueFromPipeline=$True)]
+          [String[]]$Path)
+    
+    process {
+        foreach ($p in $Path) {
+            try {
+                if (Test-Path $p) {
+                    $Package = [Package]::new($p)
+                    Write-Output $Package                
+                } 
+                else {
+                    throw "Path $p does not exist"
+                }
 
-    try {
-        $Package = [Package]::new($Path)
-        Write-Output $Package
-    } 
-    catch {
-        throw $_.exception.message
+            } 
+            catch {
+                throw $_.exception.message
+            }        
+        }
     }
 }

@@ -1,7 +1,10 @@
 Function Get-RemoteFile {
     [CmdletBinding()]
-    param([string]$URL,
+    param([parameter(Mandatory=$true)]
+          [string]$URL,
+          [parameter(Mandatory=$true)]
           [string]$Destination,
+          [parameter(Mandatory=$true)]
           [string]$Checksum)
 
     try {
