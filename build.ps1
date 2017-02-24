@@ -3,9 +3,12 @@ param(
     [string[]]$Task = 'default'
 )
 
-if (!(Get-Module -Name Pester -ListAvailable)) { Install-Module -Name Pester -Scope CurrentUser }
-if (!(Get-Module -Name psake -ListAvailable)) { Install-Module -Name psake -Scope CurrentUser }
-if (!(Get-Module -Name PSDeploy -ListAvailable)) { Install-Module -Name PSDeploy -Scope CurrentUser }
+
+Get-PackageProvider -Name NuGet -ForceBootstrap | Out-Null
+Install-Module Psake, PSDeploy, PSScriptAnalyzer -force
+Install-Module Pester -Force -SkipPublisherCheck 
+Import-Module Psake, Pester, PSScriptAnalyzer
+
 try {
     Invoke-psake -buildFile "$PSScriptRoot\psake.ps1" -taskList $Task -Verbose:$VerbosePreference -ErrorAction Stop
 }
