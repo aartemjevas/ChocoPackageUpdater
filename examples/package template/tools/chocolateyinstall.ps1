@@ -8,10 +8,10 @@ try {
 
     $packageArgs = @{
       packageName   = $Package.Packagename
-      fileType      = $Package.Filetype
+      fileType      = ''
       url           = $url
       url64bit      = $url64
-      softwareName  = $Package.softwareName
+      softwareName  = ''
       checksum      = $Package.Checksum32
       checksumType  = 'md5' 
       checksum64    = $Package.Checksum64

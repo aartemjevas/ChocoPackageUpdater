@@ -2,11 +2,12 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>_REPLACE_</id>
-    <version>_REPLACE_</version>
+    <version></version>
     <title>_REPLACE_</title>
-    <authors>RunwayBPO</authors>
+    <authors>_REPLACE_</authors>
     <projectUrl>_REPLACE_</projectUrl>
     <iconUrl>_REPLACE_</iconUrl>
+    <licenseUrl>_REPLACE_</licenseUrl>
     <tags>_REPLACE_</tags>
     <summary>_REPLACE_</summary>
     <description>_REPLACE_</description>
