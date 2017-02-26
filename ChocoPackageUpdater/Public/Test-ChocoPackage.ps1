@@ -1,3 +1,17 @@
+<#
+.DESCRIPTION
+Tests chocolatey package and returns result. Nupkg file must exist in provided location.
+
+.PARAMETER Path
+Package location
+
+.EXAMPLE
+Test-ChocoPackage -Path D:\GitHub\chocofeed\packages\firefox
+
+.LINK
+https://github.com/aartemjevas/ChocoPackageUpdater
+
+#>
 Function Test-ChocoPackage {
     [CmdletBinding()]
     param([parameter(Mandatory=$true)]
@@ -8,9 +22,9 @@ Function Test-ChocoPackage {
             $package_name    = $Nu.Name -replace '(\.\d+)+(-[^-]+)?\.nupkg$'
             $package_version = ($Nu.BaseName -replace $package_name).Substring(1)
         
-            Write-Verbose ('-'*60)
-            Write-Verbose "TESTING $package_name v$package_version"
-            Write-Verbose ('-'*60)
+            Write-Host ('-'*60) -ForegroundColor Magenta
+            Write-Host "TESTING PACKAGE: $package_name v$package_version" -ForegroundColor Magenta
+            Write-Host ('-'*60) -ForegroundColor Magenta
         
             $LastExitCode = 0
             $validExitCodes = @(0, 1605, 1614, 1641, 3010)
@@ -27,7 +41,7 @@ Function Test-ChocoPackage {
                 $testRes = [pscustomobject]@{'Packagename'= $package_name;
                                              'Version' = $package_version
                                              'Status' = 'failed'; 
-                                             'Existcode' = $LastExitCode}
+                                             'Exitcode' = $LastExitCode}
             }
             Write-Output $testRes        
         }

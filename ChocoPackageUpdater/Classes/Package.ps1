@@ -6,7 +6,6 @@
     [string]$DownloadUrl64
     [string]$Filename32
     [string]$Filename64
-    [string]$FileType
     [string]$Checksum32
     [string]$Checksum64
     hidden [string]$TmpFile32Path

@@ -66,7 +66,7 @@ FormatsToProcess = @()
 # NestedModules = @()
 
 # Functions to export from this module
-FunctionsToExport = 'Get-ChocoPackage Test-ChocoPackage Save-ChocoPackage'
+FunctionsToExport = 'Get-ChocoPackage','Test-ChocoPackage', 'Save-ChocoPackage', 'Validate-ChocoPackage'
 
 # Cmdlets to export from this module
 CmdletsToExport = @()

@@ -30,12 +30,12 @@ Function Get-URL {
     param([ValidateSet("32","64")]
           [string]$Arch
     )
-    $InternalServer = Get-InternalServer
     switch ($Arch) {
         "32" {
             $url = "http://chocolateycdn.local/files/$($Package.Packagename)/$($Package.Version)/$($Package.Filename32)"
+            Write-Output $url
             if (!(Test-URL -URL $url)) {
-                $url = $Package.DownloadURL32   
+                $url = $Package.DownloadURL32
             }
         }
         "64" {
@@ -45,6 +45,5 @@ Function Get-URL {
             }   
         }
     }
-    Write-Output $url
-        
+    Write-Output $url   
 }
