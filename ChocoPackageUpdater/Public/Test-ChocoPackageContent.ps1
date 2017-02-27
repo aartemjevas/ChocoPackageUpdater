@@ -15,8 +15,9 @@ This function works only with customized chocolatey packages.
 https://github.com/aartemjevas/ChocoPackageUpdater
 
 #>
-Function Validate-ChocoPackage {
+Function Test-ChocoPackageContent {
     [CmdletBinding()]
+    [OutputType([bool])] 
     param([parameter(Mandatory=$true)]
           [string]$Path)
 

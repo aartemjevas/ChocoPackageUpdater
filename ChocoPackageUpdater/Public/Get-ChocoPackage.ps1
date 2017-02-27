@@ -28,6 +28,7 @@ https://github.com/aartemjevas/ChocoPackageUpdater
 #>
 Function Get-ChocoPackage {
     [CmdletBinding()]
+    [OutputType([Package])] 
     param([parameter(Mandatory=$true,
                      ValueFromPipeline=$True)]
           [String[]]$Path)

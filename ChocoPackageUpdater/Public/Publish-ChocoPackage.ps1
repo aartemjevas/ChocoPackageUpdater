@@ -14,6 +14,7 @@ https://github.com/aartemjevas/ChocoPackageUpdater
 #>
 Function Publish-ChocoPackage {
     [CmdletBinding()]
+    [OutputType([void])] 
     param([parameter(Mandatory=$true)]
           [ValidateScript({(get-item $_).name -like "*.nupkg"})]
           [string]$Path)

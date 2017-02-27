@@ -14,6 +14,7 @@ https://github.com/aartemjevas/ChocoPackageUpdater
 #>
 Function Test-ChocoPackage {
     [CmdletBinding()]
+    [OutputType([pscustomobject])] 
     param([parameter(Mandatory=$true)]
           [string]$Path)
     try {

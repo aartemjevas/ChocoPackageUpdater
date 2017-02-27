@@ -14,6 +14,15 @@ Describe "Get-ChocoPackage" {
         (Get-Command Get-ChocoPackage).Parameters.Path.Attributes.Mandatory |
             Should Be $true
     }
+    It "Output type should be [Package]" {
+        (Get-Command Get-ChocoPackage).OutputType.Name | Should be "Package"
+    }
+}
+Describe "New-ChocoPackage" {
+
+}
+Describe "Publish-ChocoPackage" {
+
 }
 Describe "Save-ChocoPackage" {
     It "Path parameter should be mandatory" {
@@ -25,9 +34,15 @@ Describe "Save-ChocoPackage" {
             Should Be $true
     }
 }
+Describe "Set-ChocoPackage" {
+
+}
 Describe "Test-ChocoPackage" {
     It "Path parameter should be mandatory" {
         (Get-Command Test-ChocoPackage).Parameters.Path.Attributes.Mandatory |
             Should Be $true
     }
+}
+Describe "Test-ChocoPackageContent" {
+
 }

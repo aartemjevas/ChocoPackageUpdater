@@ -29,6 +29,7 @@ https://github.com/aartemjevas/ChocoPackageUpdater
 #>
 Function Save-ChocoPackage {
     [CmdletBinding()]
+    [OutputType([void])] 
     param([parameter(Mandatory=$true,
                      ValueFromPipeline=$True)]
           [string[]]$Path,

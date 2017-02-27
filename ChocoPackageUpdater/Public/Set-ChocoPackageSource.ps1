@@ -17,6 +17,7 @@ https://github.com/aartemjevas/ChocoPackageUpdater
 #>
 Function Set-ChocoPackageSource {
     [CmdletBinding()]
+    [OutputType([void])] 
     param([parameter(Mandatory=$true)]
           [string]$Source,
           [parameter(Mandatory=$true)]
