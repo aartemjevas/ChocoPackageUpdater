@@ -23,7 +23,7 @@ Package
         package.json
 ```
 **update.ps1**  
-Technique is borowed from AU mobule (add link)  
+Technique is borowed from [AU module](https://github.com/majkinetor/au)
 This script outputs a PSCustomObject containing Version, DownloadURL32 and Download64 properties.  
 Firefox update.ps1 example
 ```ps
@@ -37,7 +37,7 @@ return [PScustomObject]@{ 'Version' = $version;
                     'DownloadUrl32' = $url32;
                     'DownloadUrl64' = $url64 }
 ```
-**chocolateybeforemodify.ps1**  
+**chocolateyinstall.ps1**  
 Install script gets URLs with Get-URL function defined in helpers.ps1.   
 Packagename and Checksum properties are listed in package.json.
 Firefox package example
@@ -86,7 +86,7 @@ Firefox v51.0.1 example
     "SoftwareName": "Mozilla Firefox*",
     "Filename32": "firefox32.exe",
     "Filename64": "firefox64.exe",
-    "Version": "50.0.1",
+    "Version": "51.0.1",
     "Checksum32": "95D7C988D4C768C2D8F70A26334F0C5E",
     "Checksum64": "B7531D3FDBAC3B5909248495D149E44D",
     "DownloadURL32": "https://download.mozilla.org/?product=firefox-51.0.1-SSL&amp;os=win&amp;lang=en-US",
