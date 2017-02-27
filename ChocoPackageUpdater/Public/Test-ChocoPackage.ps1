@@ -35,13 +35,15 @@ Function Test-ChocoPackage {
                 $testRes = [pscustomobject]@{'Packagename'= $package_name;
                                              'Version' = $package_version;
                                              'Status' = 'success'; 
-                                             'Exitcode' = $LastExitCode}
+                                             'Exitcode' = $LastExitCode;
+                                             'Nupkg' = $nu.FullName}
             } 
             else {
                 $testRes = [pscustomobject]@{'Packagename'= $package_name;
                                              'Version' = $package_version
                                              'Status' = 'failed'; 
-                                             'Exitcode' = $LastExitCode}
+                                             'Exitcode' = $LastExitCode;
+                                             'Nupkg' = $nu.FullName}
             }
             Write-Output $testRes        
         }
